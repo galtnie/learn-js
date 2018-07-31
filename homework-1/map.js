@@ -1,11 +1,15 @@
 let arr = [123, 234, 345, 456, 567, 678, 789]
 let notArr = ''
 
-let map = function (array) {
+let callback = function (element){
+    return element * 2 
+}
+
+let map = function (array, callback) {
     if (Array.isArray(array)) {
         let anotherArray = []
         for (let i = 0; i < array.length; i++) {
-            anotherArray[i] = array[i] * 2
+            anotherArray[i]  = callback(array[i])   
         }
         return (anotherArray)
     } else {
@@ -13,5 +17,5 @@ let map = function (array) {
     }
 }
 
-console.log(map(arr))
+console.log(map(arr, callback))
 //console.log(map(notArr))
