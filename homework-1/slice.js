@@ -6,7 +6,7 @@ let slice = function (array, start, end) {
     let counter = 0
     if (!Array.isArray(array) || typeof start !== "number" || (typeof end !== "number" && typeof end !== "undefined")) {
         return console.error('wrong type of the argument')
-    } else if (typeof end !== "undefined") {
+    } else if (typeof end === "number") {
         for (let i = start; i <= end; i++) {
             anotherArray[counter] = array[i]
             counter++
